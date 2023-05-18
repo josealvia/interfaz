@@ -70,7 +70,7 @@ export default createStore({
     },
     async signup({commit}, empresa){
       try {
-        const res = await fetch('http://localhost:5000/api/empresa/signup',{
+        const res = await fetch('https://backendempresa.azurewebsites.net/api/empresa/signup',{
           method:'POST',
           headers: {
               "Content-Type": "application/json",
@@ -93,7 +93,7 @@ export default createStore({
     },
     async signin({commit}, empresa){
       try {
-        const res = await fetch('http://localhost:5000/api/empresa/signin',{
+        const res = await fetch('https://backendempresa.azurewebsites.net/api/empresa/signin',{
           method:'POST',
           headers: {
               "Content-Type": "application/json",
@@ -118,7 +118,7 @@ export default createStore({
     },
     async editEmpresa({commit, state}, empresa){
       try {
-        const res = await fetch('http://localhost:5000/api/empresa',{
+        const res = await fetch('https://backendempresa.azurewebsites.net/api/empresa',{
           method:'PUT',
           headers: {
               "Content-Type": "application/json",
@@ -143,7 +143,7 @@ export default createStore({
       try {
         if(localStorage.getItem('empresa')){
           commit('setEmpresa', JSON.parse(localStorage.getItem('empresa')));
-          const res = await fetch('http://localhost:5000/api/empresa',{
+          const res = await fetch('https://backendempresa.azurewebsites.net/api/empresa',{
             method: 'GET',
             headers:{
               "Content-Type": "application/json",
@@ -168,7 +168,7 @@ export default createStore({
       try{
         if(localStorage.getItem('empresa')){
           commit('setEmpresa', JSON.parse(localStorage.getItem('empresa')));
-          const res = await fetch('http://localhost:5000/api/vacante',{
+          const res = await fetch('https://backendempresa.azurewebsites.net/api/vacante',{
             method: 'GET',
             headers:{
               "Content-Type": "application/json",
@@ -192,7 +192,7 @@ export default createStore({
     },
     async addVacante({ commit, state }, vacante){
       try {
-        const res = await fetch(`http://localhost:5000/api/vacante`,{
+        const res = await fetch(`https://backendempresa.azurewebsites.net/api/vacante`,{
           method:'POST',
           headers:{
             "Content-Type": "application/json",
@@ -217,7 +217,7 @@ export default createStore({
     },
     async deleteVacante({ commit, state }, idVacante){
       try {
-        const res = await fetch(`http://localhost:5000/api/vacante/${idVacante}`,{
+        const res = await fetch(`https://backendempresa.azurewebsites.net/api/vacante/${idVacante}`,{
           method: 'DELETE',
           headers:{
             "Content-Type": "application/json",
@@ -237,7 +237,7 @@ export default createStore({
     },
     async editVacante({ commit, state }, vacante){
       try {
-        const res = await fetch(`http://localhost:5000/api/vacante/${vacante._id}`,{
+        const res = await fetch(`https://backendempresa.azurewebsites.net/api/vacante/${vacante._id}`,{
           method: 'PUT',
           headers:{
             "Content-Type": "application/json",
@@ -258,7 +258,7 @@ export default createStore({
     },
     async aceptarSolicitud({ commit, state }, vacante){
       try {
-        const res = await fetch(`http://localhost:5000/api/vacante/${vacante._id}`,{
+        const res = await fetch(`https://backendempresa.azurewebsites.net/api/vacante/${vacante._id}`,{
           method: 'PUT',
           headers:{
             "Content-Type": "application/json",
